@@ -1,0 +1,34 @@
+name: QGCommons
+main: com.quirkygaming.commons.QGCommonsPlugin
+version: 1.9.1
+
+commands:
+   loadworld:
+      description: Operator command for world loading
+      usage: /loadworld <world> <NORMAL, NETHER, or THE_END>
+      permission: QuirkyGaming.loadworld
+      permission-message: You must have the QuirkyGaming.loadworld permission to use this command.
+   tpworld:
+      description: Operator command for multiworld teleportation
+      usage: /tpworld player x y z world
+      permission: QuirkyGaming.tpworld
+      permission-message: You must have the QuirkyGaming.tpworld permission to use this command.
+   qgreload:
+      description: Reloads QGCommons and followers
+      usage: /qgreload
+      permission: quirkygaming.admin
+      permission-message: You need <permission> to reload QG plugins
+   qg:
+      description: Generic command; no use so far except internal
+      usage: N/A
+      
+permissions:
+   QuirkyGaming.admin:
+      description: Allows you to reload plugin configuration.
+      default: op
+   QuirkyGaming.tpworld:
+      description: Allows you to use the /tpworld command.
+      default: op
+   QuirkyGaming.loadworld:
+      description: Allows you to use the /loadworld command.
+      default: op
