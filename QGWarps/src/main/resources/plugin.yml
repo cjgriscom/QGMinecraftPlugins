@@ -1,0 +1,54 @@
+name: QGWarps
+main: com.quirkygaming.qgwarps.QGWarps
+version: 2.2
+depend: [QGCommons]
+
+commands:
+   warpsreload:
+      description: Reloads warp configuration.
+      usage: /warpsreload
+      permission: QuirkyGaming.conf
+      permission-message: You must have the QuirkyGaming.conf permission to use this command.
+   warpssave:
+      description: Saves warp configuration.
+      usage: /warpssave
+      permission: QuirkyGaming.conf
+      permission-message: You must have the QuirkyGaming.conf permission to use this command.
+   set:
+      description: Sets a temporary warp point for a player.
+      usage: /set [name]
+      permission: QuirkyGaming.warp
+      permission-message: You must have the QuirkyGaming.warp permission to use this command.
+   return:
+      description: Returns you to the point where you last used the /set command.
+      usage: /return
+      permission: QuirkyGaming.warp
+      permission-message: You must have the QuirkyGaming.warp permission to use this command.
+   recall:
+      description: Outputs the name of the point set with the /set command.
+      usage: /recall
+      permission: QuirkyGaming.warp
+      permission-message: You must have the QuirkyGaming.warp permission to use this command.
+   setspawn:
+      description: Chooses between various spawnpoints for a player.
+      usage: /setspawn [spawn_name]
+      permission: QuirkyGaming.warp
+      permission-message: You must have the QuirkyGaming.warp permission to use this command.
+   sethome:
+      description: Sets a home point for a player.
+      usage: /sethome
+      permission: QuirkyGaming.warp
+      permission-message: You must have the QuirkyGaming.warp permission to use this command.
+   home:
+      description: Returns you to your home.
+      usage: /home
+      permission: QuirkyGaming.warp
+      permission-message: You must have the QuirkyGaming.warp permission to use this command.
+      
+permissions:
+   QuirkyGaming.warp:
+      description: Allows you to use the /set, /return, /recall, /sethome, and /home commands.
+      default: true
+   QuirkyGaming.conf:
+      description: Allows you use commands that modify configuration.
+      default: false
