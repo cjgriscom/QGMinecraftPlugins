@@ -1,0 +1,42 @@
+name: QGBackups
+main: com.quirkygaming.qgbackups.QGBackups
+version: 0.3
+depend: [QGCommons]
+
+commands:
+   queuetask:
+      description: Queue a named task for the next restart.
+      usage: /queuetask
+      permission: QuirkyGaming.admin
+      permission-message: You must have the QuirkyGaming.admin permission to use this command.
+   definetask:
+      description: Define a new task
+      usage: /definetask
+      permission: QuirkyGaming.admin
+      permission-message: You must have the QuirkyGaming.admin permission to use this command.
+   definetimeslot:
+      description: Define a new time slot
+      usage: /definetimeslot
+      permission: QuirkyGaming.admin
+      permission-message: You must have the QuirkyGaming.admin permission to use this command.
+   deletetask:
+      description: Delete a task
+      usage: /deletetask
+      permission: QuirkyGaming.admin
+      permission-message: You must have the QuirkyGaming.admin permission to use this command.
+   deletetimeslot:
+      description: Delete a time slot
+      usage: /deletetimeslot
+      permission: QuirkyGaming.admin
+      permission-message: You must have the QuirkyGaming.admin permission to use this command.
+      description: Delete a task
+   listtasks:
+      description: List defined tasks
+      usage: /listtasks
+      permission: QuirkyGaming.admin
+      permission-message: You must have the QuirkyGaming.admin permission to use this command.
+   listtimeslots:
+      description: List time slots
+      usage: /listtimeslots
+      permission: QuirkyGaming.admin
+      permission-message: You must have the QuirkyGaming.admin permission to use this command.
