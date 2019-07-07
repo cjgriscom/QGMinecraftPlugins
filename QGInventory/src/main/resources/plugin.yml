@@ -1,0 +1,16 @@
+name: QGInventory
+main: com.quirkygaming.qginventory.QGInventory
+version: 0.1
+depends: [QGCommons, QGPlayerManager]
+
+commands:
+   qginventory:
+      description: Moderator command for restoring inventory backups
+      usage: /qginventory
+      permission: QuirkyGaming.inventory
+      permission-message: You must have the QuirkyGaming.inventory permission to use this command.
+      
+permissions:
+   QuirkyGaming.inventory:
+      description: Allows you to restore inventory backups.
+      default: true
