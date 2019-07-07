@@ -1,0 +1,17 @@
+name: QGRegions
+main: com.quirkygaming.qgregions.QGRegions
+version: 1.0_RC1
+depend: [QGCommons, QGPlayerManager, QGWarps]
+softdepend: [dynmap, QGSigns]
+
+commands:
+   qgregions:
+      description: Manages a region.
+      usage: /<command> <action> [options]
+      permission: QuirkyGaming.regions
+      permission-message: You must have the QuirkyGaming.regions permission to use this command.
+
+permissions:
+   QuirkyGaming.regions:
+      description: Allows you to create regions.
+      default: op
