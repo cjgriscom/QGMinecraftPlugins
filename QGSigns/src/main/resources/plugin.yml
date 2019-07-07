@@ -1,0 +1,17 @@
+name: QGSigns
+main: com.quirkygaming.qgsigns.QGSigns
+version: 1.5
+depend: [QGCommons, QGPlayerManager, QGBooks, QGWarps]
+softdepend: [dynmap]
+
+commands:
+   qglandmarks:
+      description: Manages a landmark.
+      usage: /<command> <action> [options]
+      permission: QuirkyGaming.landmarks
+      permission-message: You must have the QuirkyGaming.landmarks permission to use this command.
+
+permissions:
+   QuirkyGaming.landmarks:
+      description: Allows you to create Dynmap landmarks.
+      default: op
