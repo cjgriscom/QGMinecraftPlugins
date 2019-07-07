@@ -1,0 +1,17 @@
+name: QGBooks
+main: com.quirkygaming.qgbooks.QGBooks
+version: 2.2
+depend: [QGCommons]
+
+commands:
+   qgbooks:
+      description: 'QGBooks operations -- type /qgbooks help for usage examples.'
+      usage: /qgbooks [command]
+      
+permissions:
+   QuirkyGaming.books.admin:
+      description: Allows you to delete any message book entry.
+      default: false
+   QuirkyGaming.books.bulletin:
+      description: Allows you to broadcast bulletin messages.
+      default: true
