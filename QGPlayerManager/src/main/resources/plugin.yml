@@ -1,0 +1,36 @@
+name: QGPlayerManager
+main: com.quirkygaming.qgplayermanager.QGPlayerManager
+version: 0.4
+depend: [QGCommons]
+
+
+commands:
+   whois:
+      description: Dumps information about a given player.
+      usage: /whois <player>
+      permission: QuirkyGaming.messages
+      permission-message: You must have the QuirkyGaming.messages permission to use this command.
+   playeredit:
+      description: Edits a player's name and moderation status.
+      usage: /playeredit <name> <firstName> <lastName> <isModerator>
+      permission: QuirkyGaming.playermanager
+      permission-message: You must be admin to use this command.
+   playerrefresh:
+      description: Reloads known players.
+      usage: /playerrefresh
+      permission: QuirkyGaming.playermanager
+      permission-message: You must be admin to use this command.
+   who:
+      description: Lists the current players.
+      usage: /who
+      permission: QuirkyGaming.messages
+      permission-message: You must have the QuirkyGaming.messages permission to use this command.
+
+permissions:
+   QuirkyGaming.playermanager:
+      description: Allows you to modify player registry data.
+      default: op
+   QuirkyGaming.messages:
+      description: Allows you to use the /whois and /who commands.
+      default: true
+      
