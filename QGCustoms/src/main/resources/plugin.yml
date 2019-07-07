@@ -1,0 +1,28 @@
+name: QGCustoms
+main: com.quirkygaming.qgcustoms.QGCustomsPlugin
+version: 2.6
+depend: [QGCommons, QGHeads, QGBooks, QGPlayerManager, QGWarps, QGSigns]
+loadbefore: [SurvivalGames]
+commands:
+   rules:
+      description: Lists the server rules.
+      usage: /rules
+      permission: QuirkyGaming.messages
+      permission-message: You must have the QuirkyGaming.messages permission to use this command.
+   qgcustoms:
+      description: Used to manage module configuration
+      usage: /qgcustoms {list, load, unload, enable, disable} {module}
+      permission: QuirkyGaming.admin
+   qgtest:
+      description: For testing purposes
+      usage: /qgtest
+      permission: QuirkyGaming.admin
+   qgmoderator:
+      description: Moderator privilege
+      usage: /qgmoderator
+      permission: QuirkyGaming.admin
+   autoload:
+      description: Autoload worlds like arenas and such
+      usage: /autoload <add/remove> <world>
+      permission: QuirkyGaming.admin
+      
