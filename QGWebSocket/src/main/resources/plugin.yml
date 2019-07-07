@@ -1,0 +1,4 @@
+name: QGWebSocket
+main: com.quirkygaming.qgwebsocket.QGSocket
+version: 0.5
+depend: [QGCommons, QGRegions, QGPlayerManager]
