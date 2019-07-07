@@ -1,6 +1,6 @@
 name: QGPlayerManager
 main: com.quirkygaming.qgplayermanager.QGPlayerManager
-version: 0.4
+version: 0.5
 depend: [QGCommons]
 
 
