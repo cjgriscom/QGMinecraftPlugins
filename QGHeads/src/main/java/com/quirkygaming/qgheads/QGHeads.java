@@ -1,5 +1,6 @@
 package com.quirkygaming.qgheads;
 
+import java.lang.reflect.Field;
 import java.util.HashMap;
 import java.util.UUID;
 
@@ -58,16 +59,22 @@ public class QGHeads extends JavaPlugin {
 	}
 	
 	public static void replaceHead(Block head, ItemStack newHead) {
-		AnonymousObject craftBlockState = AnonymousObject.fromObject(head.getState());
-		AnonymousObject tileEntitySkull = craftBlockState.invokeAnon(handler, "getTileEntity");
-		
 		Object nbtOwner = AnonymousObject.fromObject(getNBT(newHead)).invoke(handler, "get", "SkullOwner");
 		
 		Object gameProfile = Util.loadNMSClass("GameProfileSerializer").invoke(handler, "deserialize", nbtOwner);
 		
-		tileEntitySkull.invoke(handler, "setGameProfile", gameProfile);
-		
-		head.getState().update(true);
+		try {
+			Field prof = head.getState().getClass().getDeclaredField("profile");
+			prof.setAccessible(true);
+			prof.set(head.getState(), gameProfile);
+			Field te = head.getState().getClass().getSuperclass().getDeclaredField("tileEntity");
+			te.setAccessible(true);
+			AnonymousObject tileEntitySkull = AnonymousObject.fromObject(te.get(head.getState()));
+			tileEntitySkull.invoke(handler, "setGameProfile", gameProfile);
+			head.getState().update(true);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 	
 	public static ItemStack getPlayerHead(UUID playerUUID) {
