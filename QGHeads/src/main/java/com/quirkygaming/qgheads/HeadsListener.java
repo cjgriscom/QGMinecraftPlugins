@@ -143,8 +143,8 @@ public class HeadsListener implements Listener {
 			DamageCause causeOfDeath = event.getEntity().getLastDamageCause().getCause();
 			boolean attackerEqualsVictim = event.getEntity().getKiller().getName().equals(event.getEntity().getPlayer().getName());
 			if (causeOfDeath.equals(DamageCause.ENTITY_ATTACK) && !attackerEqualsVictim) {
-				if (event.getEntity().getKiller().getInventory().getItemInMainHand().getType().equals(Material.WOOD_AXE)) {
-					event.getDrops().add(QGHeads.getPlayerHead(event.getEntity().getName()));
+				if (event.getEntity().getKiller().getInventory().getItemInMainHand().getType().equals(Material.WOODEN_AXE)) {
+					event.getDrops().add(QGHeads.getPlayerHead(event.getEntity().getUniqueId()));
 				}
 			}
 		}

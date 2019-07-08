@@ -1,4 +1,5 @@
 name: QGHeads
 main: com.quirkygaming.qgheads.QGHeads
-version: 5.0
+version: 5.1
+api-version: 1.13
 depend: [QGCommons, ProtocolLib]

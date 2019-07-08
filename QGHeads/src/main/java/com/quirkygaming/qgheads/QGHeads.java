@@ -1,7 +1,9 @@
 package com.quirkygaming.qgheads;
 
 import java.util.HashMap;
+import java.util.UUID;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.inventory.ItemStack;
@@ -21,10 +23,10 @@ public class QGHeads extends JavaPlugin {
 	public static HashMap<String, String> localNames = new HashMap<String, String>();
 	public static HashMap<String, ItemStack> registeredHeads = new HashMap<String, ItemStack>();
 	
-	public static final ItemStack skeletonHead = new ItemStack(Material.SKULL_ITEM, 1, (short) 0);
-	public static final ItemStack zombieHead = new ItemStack(Material.SKULL_ITEM, 1, (short) 2);
-	public static final ItemStack steveHead = new ItemStack(Material.SKULL_ITEM, 1, (short) 3);
-	public static final ItemStack creeperHead = new ItemStack(Material.SKULL_ITEM, 1, (short) 4);
+	public static final ItemStack skeletonHead = new ItemStack(Material.SKELETON_SKULL, 1);
+	public static final ItemStack zombieHead = new ItemStack(Material.ZOMBIE_HEAD);
+	public static final ItemStack steveHead = new ItemStack(Material.PLAYER_HEAD);
+	public static final ItemStack creeperHead = new ItemStack(Material.CREEPER_HEAD);
 	
 	public static final ItemStack spiderHead = initCustomHead("§rSpider Head", "5ad55f34-41b6-4bd2-9c32-18983c635936", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvY2Q1NDE1NDFkYWFmZjUwODk2Y2QyNThiZGJkZDRjZjgwYzNiYTgxNjczNTcyNjA3OGJmZTM5MzkyN2U1N2YxIn19fQ==");
 	public static final ItemStack caveSpiderHead = initCustomHead("§rCave Spider Head", "cab28771-f0cd-4fe7-b129-02c69eba79a5", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDE2NDVkZmQ3N2QwOTkyMzEwN2IzNDk2ZTk0ZWViNWMzMDMyOWY5N2VmYzk2ZWQ3NmUyMjZlOTgyMjQifX19");
@@ -68,10 +70,10 @@ public class QGHeads extends JavaPlugin {
 		head.getState().update(true);
 	}
 	
-	public static ItemStack getPlayerHead(String playerName) {
+	public static ItemStack getPlayerHead(UUID playerUUID) {
 		ItemStack playerHead = steveHead.clone();
 		SkullMeta skullMeta = (SkullMeta) playerHead.getItemMeta();
-		skullMeta.setOwner(playerName);
+		skullMeta.setOwningPlayer(Bukkit.getOfflinePlayer(playerUUID));
 		playerHead.setItemMeta(skullMeta);
 		return playerHead;
 	}
@@ -84,7 +86,7 @@ public class QGHeads extends JavaPlugin {
 	}
 	
 	public static Object getNBT(ItemStack head) {
-		if (head.getType() != Material.SKULL_ITEM) return null;
+		if (head.getType() != Material.PLAYER_HEAD) return null;
 		
 		AnonymousClass craftItemStack = Util.loadCraftBukkitClass("inventory.CraftItemStack");
 		AnonymousObject nmsItem = craftItemStack.invokeAnon(handler, "asNMSCopy", head);
