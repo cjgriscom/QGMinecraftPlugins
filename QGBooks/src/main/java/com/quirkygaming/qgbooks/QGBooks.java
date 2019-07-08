@@ -10,6 +10,7 @@ import java.util.UUID;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -317,7 +318,7 @@ public class QGBooks extends JavaPlugin implements GreeterListener {
 		BookMeta bookMeta = (BookMeta) messageBookStack.getItemMeta();
 		bookMeta.setTitle("Message Book");
 		messageBookStack.setItemMeta(bookMeta);
-		messageBookRecipe = new ShapelessRecipe(messageBookStack);
+		messageBookRecipe = new ShapelessRecipe(new NamespacedKey(this, "message_book"), messageBookStack);
 		messageBookRecipe.addIngredient(Material.REDSTONE).addIngredient(Material.BOOK);
 		
 		getServer().addRecipe(messageBookRecipe);
