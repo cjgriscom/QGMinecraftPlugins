@@ -1,6 +1,7 @@
 name: QGCustoms
 main: com.quirkygaming.qgcustoms.QGCustomsPlugin
-version: 2.6
+version: 2.7
+api-version: 1.13
 depend: [QGCommons, QGHeads, QGBooks, QGPlayerManager, QGWarps, QGSigns]
 loadbefore: [SurvivalGames]
 commands:
