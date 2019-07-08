@@ -8,6 +8,7 @@ import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
 import org.bukkit.block.Jukebox;
 import org.bukkit.block.data.Lightable;
+import org.bukkit.block.data.Powerable;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.event.EventHandler;
@@ -103,7 +104,7 @@ public class JukeboxModule extends CustomModule {
 						doPowerup(b); 
 				}
 			}
-			if (b.getType() == Material.REPEATER && ((Lightable)b.getBlockData()).isLit()) {
+			if (b.getType() == Material.REPEATER && ((Powerable)b.getBlockData()).isPowered()) {
 				for (BlockFace bf : nsewFaces) {
 					if (b.isBlockFacePowered(bf)) {
 						Block rc = b.getRelative(bf);
