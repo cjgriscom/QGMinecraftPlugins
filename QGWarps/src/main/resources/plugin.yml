@@ -1,6 +1,6 @@
 name: QGWarps
 main: com.quirkygaming.qgwarps.QGWarps
-version: 2.2
+version: 2.3
 depend: [QGCommons]
 
 commands:
