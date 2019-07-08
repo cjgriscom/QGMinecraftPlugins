@@ -161,7 +161,7 @@ public class ModeratorModule extends CustomModule {
 	private static void handleChestOpen(InventoryOpenEvent e, Player p, Inventory iv, Location l) {
 		Coord3D coord = new Coord3D(l);
 		if (lockMode.containsKey(p.getName())) {
-			if (!p.getInventory().getItemInMainHand().getType().equals(Material.WOOD_AXE)) return;
+			if (!p.getInventory().getItemInMainHand().getType().equals(Material.WOODEN_AXE)) return;
 			e.setCancelled(true);
 			int mode = lockMode.get(p.getName());
 			if (mode == 1) {
