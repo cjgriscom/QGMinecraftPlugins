@@ -1,6 +1,6 @@
 name: QGBooks
 main: com.quirkygaming.qgbooks.QGBooks
-version: 2.2
+version: 2.3
 depend: [QGCommons]
 
 commands:
