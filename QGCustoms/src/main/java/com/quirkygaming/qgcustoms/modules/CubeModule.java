@@ -9,6 +9,7 @@ import static org.bukkit.DyeColor.YELLOW;
 
 import org.bukkit.DyeColor;
 import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
 import org.bukkit.block.Block;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -56,7 +57,7 @@ public class CubeModule extends CustomModule {
 			cube = QGHeads.initCustomHead("§rRubik's Cube", "23cbe66f-5e4f-4a8f-bd00-0444059c9b57", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDRhOGVkZjNkMTk3NDJkZTlhY2Y0MDhmZjRkNjE3MjYxNjFjMzZkNDUzZjcyZWY3MjliZGQ5OTQzZDZhZiJ9fX0=");
 			cube_scrambled = QGHeads.initCustomHead("§rRubik's Cube (scrambled)", "68f87a44-275f-4a5d-986a-6f41d405c72e", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWQ4NmU3YmQyOGMxNDZmNzE1MTRjNzgyY2FjMDU1ODYwZDFmMzcyYjRhOWJlM2ZlNjVjZmUxMTA0NzMzYmEifX19");
 			
-			ShapelessRecipe cubeRecipe = new ShapelessRecipe(cube);
+			ShapelessRecipe cubeRecipe = new ShapelessRecipe(new NamespacedKey(plugin, "rubiks_cube"), cube);
 			
 			DyeColor[] colors = new DyeColor[]{WHITE, BLUE, RED, GREEN, ORANGE, YELLOW};
 			for (DyeColor c : colors) cubeRecipe.addIngredient(new Wool(c));
