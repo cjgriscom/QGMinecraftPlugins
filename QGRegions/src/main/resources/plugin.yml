@@ -1,6 +1,7 @@
 name: QGRegions
 main: com.quirkygaming.qgregions.QGRegions
-version: 1.0_RC1
+version: 1.1
+api-version: 1.13
 depend: [QGCommons, QGPlayerManager, QGWarps]
 softdepend: [dynmap, QGSigns]
 

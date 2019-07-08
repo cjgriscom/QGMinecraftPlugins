@@ -149,10 +149,6 @@ public class QGRegions extends JavaPlugin implements Listener, CommandExecutor {
 			player.sendMessage(ChatColor.RED + "[QGRegions] Another player is currently creating a region.");
 			return;
 		}
-		if (regions.containsKey(name)) {
-			player.sendMessage(ChatColor.RED + "[QGRegions] Region " + name + " already exists.");
-			return;
-		}
 		currentPlayer = player.getUniqueId();
 		signLoc = loc;
 		firstBound = null;

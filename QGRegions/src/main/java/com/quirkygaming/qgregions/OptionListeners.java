@@ -8,7 +8,6 @@ import static com.quirkygaming.qgregions.structures.RegionOpt.disable_warp_out;
 import org.bukkit.ChatColor;
 import org.bukkit.GameMode;
 import org.bukkit.Location;
-import org.bukkit.Material;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Cancellable;
@@ -136,7 +135,7 @@ public class OptionListeners implements Listener, WarpListener {
 	
 	@EventHandler(priority = EventPriority.HIGH, ignoreCancelled = true)
 	public void onBed(PlayerInteractEvent e) {
-		if (e.getAction().equals(Action.RIGHT_CLICK_BLOCK) && e.getClickedBlock().getType().equals(Material.BED_BLOCK)) {
+		if (e.getAction().equals(Action.RIGHT_CLICK_BLOCK) && e.getClickedBlock().getType().getKey().getKey().endsWith("bed")) {
 			Region r = getAssocRegion(e.getClickedBlock().getLocation());
 			
 			tryCancel(r, e, RegionOpt.block_sleep, e.getPlayer(), 
