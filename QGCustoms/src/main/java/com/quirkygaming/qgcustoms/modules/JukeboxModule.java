@@ -7,6 +7,7 @@ import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
 import org.bukkit.block.Jukebox;
+import org.bukkit.block.data.Lightable;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.event.EventHandler;
@@ -60,7 +61,9 @@ public class JukeboxModule extends CustomModule {
 			
 			Block block = e.getBlock();
 			
-			if (block.getType() == Material.REDSTONE_TORCH_ON) {
+			if ((block.getType() == Material.REDSTONE_TORCH || block.getType() == Material.REDSTONE_WALL_TORCH) 
+					&& ((Lightable)block.getBlockData()).isLit()) {
+				
 				Block adjBlock = block.getRelative(BlockFace.UP);
 				if (adjBlock.getType() == Material.JUKEBOX) {
 					if (adjBlock.isBlockPowered()) {
@@ -100,7 +103,7 @@ public class JukeboxModule extends CustomModule {
 						doPowerup(b); 
 				}
 			}
-			if (b.getType() == Material.DIODE_BLOCK_ON) {
+			if (b.getType() == Material.REPEATER && ((Lightable)b.getBlockData()).isLit()) {
 				for (BlockFace bf : nsewFaces) {
 					if (b.isBlockFacePowered(bf)) {
 						Block rc = b.getRelative(bf);
