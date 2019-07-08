@@ -77,7 +77,7 @@ public class CubeModule extends CustomModule {
 			}
 			if (event.getAction().equals(Action.RIGHT_CLICK_BLOCK)) {
 				final Material mat = block.getType();
-				if (mat == Material.SKULL) {
+				if (mat == Material.PLAYER_HEAD || mat == Material.PLAYER_WALL_HEAD) {
 					String thisUUID = QGHeads.getUUIDFromPlayerHead(block);
 							
 					if (thisUUID != null) {
