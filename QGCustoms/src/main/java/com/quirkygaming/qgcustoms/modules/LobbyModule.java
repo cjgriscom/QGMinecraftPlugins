@@ -130,8 +130,7 @@ public class LobbyModule extends CustomModule implements SpawnpointManager, Warp
 		@EventHandler(priority = EventPriority.LOW, ignoreCancelled = true)
 		public void onInteract(final PlayerInteractEvent e) {
 			if (e.getAction().equals(Action.RIGHT_CLICK_BLOCK)
-				&& (e.getClickedBlock().getType().equals(Material.STONE_BUTTON) ||
-				    e.getClickedBlock().getType().equals(Material.WOOD_BUTTON))
+				&& (e.getClickedBlock().getType().getKey().getKey().endsWith("button"))
 				&& (e.getPlayer().getGameMode().equals(GameMode.ADVENTURE) || 
 				    e.getPlayer().getGameMode().equals(GameMode.CREATIVE))) {
 				
@@ -277,7 +276,7 @@ public class LobbyModule extends CustomModule implements SpawnpointManager, Warp
 		
 		@EventHandler(priority = EventPriority.LOWEST, ignoreCancelled = true)
 		public void onBed(PlayerInteractEvent e) { // Lobby bed
-			if (e.getAction().equals(Action.RIGHT_CLICK_BLOCK) && e.getClickedBlock().getType().equals(Material.BED_BLOCK)) {
+			if (e.getAction().equals(Action.RIGHT_CLICK_BLOCK) && e.getClickedBlock().getType().getKey().getKey().endsWith("bed")) {
 				String region = QGWarpsAPI.getRegion(e.getClickedBlock().getLocation());
 				if (region != null && region.equalsIgnoreCase("Lobby")) {
 					e.setCancelled(true);
