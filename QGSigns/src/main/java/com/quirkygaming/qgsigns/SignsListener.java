@@ -57,7 +57,7 @@ public class SignsListener implements Listener {
 			timeSinceLastClick.put(event.getPlayer().getName(), System.currentTimeMillis());
 		} else if (event.getAction().equals(Action.RIGHT_CLICK_BLOCK)) {
 			final Material mat = block.getType();
-			if (mat == Material.SIGN_POST || mat == Material.WALL_SIGN) {
+			if (mat == Material.SIGN || mat == Material.WALL_SIGN) {
 				plugin.doSignClickEvent(block, event.getPlayer(), event);
 			}
 		}
@@ -70,7 +70,7 @@ public class SignsListener implements Listener {
 		Block block = event.getBlock();
 		
 		final Material mat = block.getType();
-		if (mat == Material.SIGN_POST || mat == Material.WALL_SIGN) {
+		if (mat == Material.SIGN || mat == Material.WALL_SIGN) {
 			plugin.doSignDestroyEvent(block, event.getPlayer(), event);
 		} else {
 			BlockFace face;
@@ -88,7 +88,7 @@ public class SignsListener implements Listener {
 					}
 					testBlock = block.getRelative(face);
 					Material testMat = testBlock.getType();
-					if (testMat == Material.SIGN_POST || testMat == Material.WALL_SIGN) {
+					if (testMat == Material.SIGN || testMat == Material.WALL_SIGN) {
 						Sign sign = (Sign) testBlock.getState().getData();
 						if (testBlock.getRelative(sign.getAttachedFace()).getLocation().equals(block.getLocation())){
 							plugin.doSignDestroyEvent(testBlock, event.getPlayer(), event);

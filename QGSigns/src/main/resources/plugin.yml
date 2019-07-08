@@ -1,6 +1,7 @@
 name: QGSigns
 main: com.quirkygaming.qgsigns.QGSigns
-version: 1.5
+version: 1.6
+api-version: 1.13
 depend: [QGCommons, QGPlayerManager, QGBooks, QGWarps]
 softdepend: [dynmap]
 
