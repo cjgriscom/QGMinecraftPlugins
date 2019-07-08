@@ -1,6 +1,6 @@
 name: QGCommons
 main: com.quirkygaming.commons.QGCommonsPlugin
-version: 1.9.1
+version: 1.9.2
 
 commands:
    loadworld:

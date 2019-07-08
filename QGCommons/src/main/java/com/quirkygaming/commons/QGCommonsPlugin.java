@@ -122,7 +122,7 @@ public final class QGCommonsPlugin extends JavaPlugin implements Listener {
 	private void outputMessage(final Player player) {
 		//long current = new Date().getTime();
 		long lastLogin = player.getLastPlayed();
-		Long lastLogoutObj = logouts.get(player);
+		Long lastLogoutObj = logouts.get(player.getDisplayName());
 		long lastLogout = lastLogoutObj == null ? 0 : lastLogoutObj;
 		long lastPlayed = lastLogout > lastLogin ? lastLogout : lastLogin;
 		Date d = new Date(lastPlayed);
